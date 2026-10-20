@@ -1,0 +1,421 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的個人自我介紹網站</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, "Microsoft JhengHei", sans-serif;
+            background: #f7f7fc;
+            color: #25243a;
+            line-height: 1.8;
+        }
+
+        header {
+            background: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 10px #0000000a;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: #7657f6;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            color: #7657f6;
+        }
+
+        section {
+            padding: 80px 10%;
+            scroll-margin-top: 70px;
+        }
+
+        .hero {
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            background: linear-gradient(135deg, #eee9ff, #faf9ff);
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.4;
+            margin: 15px 0;
+        }
+
+        .hero h1 span {
+            color: #7657f6;
+        }
+
+        .hero p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .avatar {
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #cfc2ff, #8c71f5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 90px;
+            flex-shrink: 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 11px 24px;
+            background: #7657f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 5px 5px 5px 0;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #5a3fd0;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #7657f6;
+            border: 1px solid #7657f6;
+        }
+
+        .btn-outline:hover {
+            color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #777;
+            margin-bottom: 35px;
+        }
+
+        .about-text {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .skills,
+        .projects {
+            background: #eeeaff;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px #00000008;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin: 10px 0;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        .icon {
+            font-size: 36px;
+        }
+
+        .experience {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .experience .card {
+            margin-bottom: 18px;
+            border-left: 4px solid #7657f6;
+        }
+
+        .contact-box {
+            max-width: 650px;
+            margin: auto;
+            text-align: center;
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+        }
+
+        footer {
+            background: #25243a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer p {
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0;
+                font-size: 14px;
+            }
+
+            section {
+                padding: 55px 7%;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .avatar {
+                width: 170px;
+                height: 170px;
+                font-size: 65px;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 網站導覽列 -->
+    <header>
+        <div class="logo">My Portfolio</div>
+
+        <nav>
+            <a href="#home">首頁</a>
+            <a href="#about">關於我</a>
+            <a href="#skills">我的技能</a>
+            <a href="#experience">我的經歷</a>
+            <a href="#projects">作品集</a>
+            <a href="#contact">聯絡我</a>
+        </nav>
+    </header>
+
+    <!-- 首頁 -->
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <p>👋 歡迎來到我的個人網站</p>
+
+            <h1>
+                你好，我是<br>
+                <span>你的名字</span>
+            </h1>
+
+            <p>
+                我是一位熱愛學習、勇於挑戰的人。
+                我喜歡探索新知識、發揮創意，
+                並將想法化為實際成果。
+            </p>
+
+            <a href="#about" class="btn">認識我</a>
+            <a href="#projects" class="btn btn-outline">查看作品</a>
+        </div>
+
+        <div class="avatar" role="img" aria-label="個人頭像">
+            👨🏻‍💻
+        </div>
+    </section>
+
+    <!-- 關於我 -->
+    <section id="about">
+        <h2 class="section-title">關於我</h2>
+        <p class="subtitle">讓我們更深入地認識彼此</p>
+
+        <div class="about-text">
+            <p>
+                你好！我是你的名字，目前正在努力學習與成長。
+                我對新事物充滿好奇，喜歡透過不斷練習提升自己的能力。
+            </p>
+            <br>
+            <p>
+                我相信每一次挑戰都是進步的機會。
+                未來希望能將自己的專長與創意結合，
+                做出具有價值的作品，並持續突破自我。
+            </p>
+        </div>
+    </section>
+
+    <!-- 我的技能 -->
+    <section class="skills" id="skills">
+        <h2 class="section-title">我的技能</h2>
+        <p class="subtitle">我正在培養與精進的能力</p>
+
+        <div class="card-grid">
+            <div class="card">
+                <div class="icon">💻</div>
+                <h3>電腦技能</h3>
+                <p>熟悉基本電腦操作，並持續學習各種數位工具。</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🎨</div>
+                <h3>創意設計</h3>
+                <p>喜歡發揮創意，嘗試不同的設計與視覺呈現。</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🤝</div>
+                <h3>溝通合作</h3>
+                <p>重視團隊合作、溝通表達與問題解決能力。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 我的經歷 -->
+    <section id="experience">
+        <h2 class="section-title">我的經歷</h2>
+        <p class="subtitle">記錄每一段成長的過程</p>
+
+        <div class="experience">
+            <div class="card">
+                <h3>🎓 學習經歷</h3>
+                <p>在這裡填寫你的學校、科系、學習歷程或專業訓練。</p>
+            </div>
+
+            <div class="card">
+                <h3>💼 工作經驗</h3>
+                <p>在這裡填寫你的工作經歷、實習經驗或參與過的活動。</p>
+            </div>
+
+            <div class="card">
+                <h3>🚀 未來目標</h3>
+                <p>持續提升自己的能力，累積經驗，完成更多有意義的作品。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品集 -->
+    <section class="projects" id="projects">
+        <h2 class="section-title">我的作品集</h2>
+        <p class="subtitle">展示我的創意與學習成果</p>
+
+        <div class="card-grid">
+            <div class="card">
+                <div class="icon">🌐</div>
+                <h3>個人網站</h3>
+                <p>運用 HTML 與 CSS 製作的個人自我介紹網站。</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">📱</div>
+                <h3>網頁設計</h3>
+                <p>嘗試設計適用於手機、平板與電腦的響應式網站。</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">✨</div>
+                <h3>其他作品</h3>
+                <p>在這裡加入你的專案名稱、作品介紹與相關連結。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 聯絡我 -->
+    <section id="contact">
+        <h2 class="section-title">聯絡我</h2>
+        <p class="subtitle">期待與你交流</p>
+
+        <div class="contact-box">
+            <h3>讓我們保持聯繫！</h3>
+            <p>
+                如果你想認識我，或有合作交流的機會，
+                歡迎透過電子郵件聯絡我。
+            </p>
+
+            <a class="btn" href="mailto:yourname@example.com">
+                ✉️ 寄送電子郵件
+            </a>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer>
+        <p>
+            © <span id="year"></span> 你的名字. All Rights Reserved.
+        </p>
+        <p>用心學習，持續成長。</p>
+    </footer>
+
+    <script>
+        // 自動顯示目前年份
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>
